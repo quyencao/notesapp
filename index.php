@@ -10,6 +10,9 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+
     <!-- Custom Style -->
     <link rel="stylesheet" href="styling.css">
 
@@ -45,6 +48,21 @@
             </div>
         </div>
     </nav>
+
+    <!-- Jumbotron with Sign up Button -->
+    <div class="jumbotron" id="myContainer">
+        <h1>Online Notes App</h1>
+        <p>Your notes with you wherever you go.</p>
+        <p>Easy to use, protects all your notes!</p>
+        <button type="button" class="btn btn-lg green signup">Sign up-It's free!</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p>quyencao.890m.com Copyright &copy; 2016 - <?php $today = date("Y"); echo $today; ?></p>
+        </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
