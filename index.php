@@ -67,7 +67,7 @@
                         <h4 class="modal-title" id="myModalLabel">Login: </h4>
                     </div>
                     <div class="modal-body">
-                        <!-- Sign up message for php file -->
+                        <!-- Login message for php file -->
                         <div id="loginmessage"></div>
                         <form>
                             <div class="form-group">
@@ -78,9 +78,15 @@
                                 <label for="password" class="sr-only">Password</label>
                                 <input type="password" class="form-control" id="loginpassword" placeholder="Password" name="loginpassword" maxlength="30">
                             </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="rememberme" id="rememberme"/>Remember me</label>
+                                <a href="#forgotPasswordModal" data-dismiss="modal" data-target="#forgotPasswordModal" data-toggle="modal" class="pull-right" style="cursor: pointer">Forgot Password?</a>
+                            </div>
+
                         </form>
                     </div>
                     <div class="modal-footer">
+                        <button class="btn btn-default pull-left" data-target="#signupModal" data-toggle="modal" data-dismiss="modal">Register</button>
                         <input class="btn green" type="submit" name="login" value="Login">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
@@ -122,6 +128,35 @@
                     </div>
                     <div class="modal-footer">
                         <input class="btn green" type="submit" name="signup" value="Sign up">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Forgot Password -->
+    <form method="post" id="forgotPasswordForm">
+        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Forgot Password? Enter your email address: </h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- forgot password message for php file -->
+                        <div id="forgotpasswordmessage"></div>
+                        <form>
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" class="form-control" id="forgotemail" placeholder="Email" name="forgotemail" maxlength="50">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default pull-left" data-target="#signupModal" data-toggle="modal" data-dismiss="modal">Register</button>
+                        <input class="btn green" type="submit" name="forgotpassword" value="Submit">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
