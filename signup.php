@@ -1,3 +1,5 @@
 <?php
-    echo "<div class='alert alert-success'>Success</div>";
+    session_start();
+
+    echo $_POST["username"];
 ?>
