@@ -1,0 +1,1 @@
+// All ajax call point to signup.php, activate.php
