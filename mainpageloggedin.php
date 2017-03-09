@@ -64,13 +64,13 @@
             </div>
             <div class="navbar-collapse collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="profile.php">Profile</a></li>
                     <li><a href="#">Help</a></li>
                     <li><a href="#">Contact us</a></li>
                     <li class="active"><a href="#">My Notes</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#loginModal" data-toggle="modal">Logged in at <b>username</b></a></li>
+                    <li><a href="#" data-toggle="modal">Logged in at <b>username</b></a></li>
                     <li><a href="#">Logout</a></li>
                 </ul>
             </div>
@@ -96,113 +96,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Login Form -->
-    <form method="post" id="loginForm">
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Login: </h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Login message for php file -->
-                        <div id="loginmessage"></div>
-                        <form>
-                            <div class="form-group">
-                                <label for="email" class="sr-only">Email</label>
-                                <input type="email" class="form-control" id="loginemail" placeholder="Email" name="loginemail" maxlength="50">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="sr-only">Password</label>
-                                <input type="password" class="form-control" id="loginpassword" placeholder="Password" name="loginpassword" maxlength="30">
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" name="rememberme" id="rememberme"/>Remember me</label>
-                                <a href="#forgotPasswordModal" data-dismiss="modal" data-target="#forgotPasswordModal" data-toggle="modal" class="pull-right" style="cursor: pointer">Forgot Password?</a>
-                            </div>
-
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default pull-left" data-target="#signupModal" data-toggle="modal" data-dismiss="modal">Register</button>
-                        <input class="btn green" type="submit" name="login" value="Login">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-
-    <!-- Signup Form -->
-    <form method="post" id="signupForm">
-        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Sign up today and Start using our Online Notes App!</h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Sign up message for php file -->
-                        <div id="signupmessage"></div>
-                        <form>
-                            <div class="form-group">
-                                <label for="username" class="sr-only">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Username" name="username" maxlength="30">
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="sr-only">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Email Address" name="email" maxlength="50">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="sr-only">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password" name="password" maxlength="30">
-                            </div>
-                            <div class="form-group">
-                                <label for="password2" class="sr-only">Confirm Password</label>
-                                <input type="password" class="form-control" id="password2" placeholder="Confirm Password" name="password2" maxlength="30">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <input class="btn green" type="submit" name="signup" value="Sign up">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-
-    <!-- Forgot Password -->
-    <form method="post" id="forgotPasswordForm">
-        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Forgot Password? Enter your email address: </h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- forgot password message for php file -->
-                        <div id="forgotpasswordmessage"></div>
-                        <form>
-                            <div class="form-group">
-                                <label for="email" class="sr-only">Email</label>
-                                <input type="email" class="form-control" id="forgotemail" placeholder="Email" name="forgotemail" maxlength="50">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default pull-left" data-target="#signupModal" data-toggle="modal" data-dismiss="modal">Register</button>
-                        <input class="btn green" type="submit" name="forgotpassword" value="Submit">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
 
     <!-- Footer -->
     <div class="footer">
