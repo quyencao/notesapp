@@ -63,7 +63,6 @@
             // password not match
             if($password !== $password2) {
                 $errors .= $different_password;
-                echo $password2 . " " . $password;
             }
         }
     }
@@ -79,6 +78,7 @@
         $email = mysqli_real_escape_string($link, $email);
         $password = mysqli_real_escape_string($link, $password);
 
+        $password = md5($password); // 32 characters
         // Check if username exist
         $sql = "SELECT * FROM users WHERE username = '$username'";
         // run query
@@ -107,6 +107,9 @@
         if (!$result) {
             // Query fail
             echo "<div class='alert alert-danger'>Error running the query!</div>";
+
+            echo "<div class='alert alert-danger'>".mysqli_error($link)."</div>";
+
             // Exit from here
             exit;
         }
@@ -117,6 +120,29 @@
         if($results != 0) {
             echo "<div class='alert alert-danger'>That's email is already registered. Do you want to log in?</div>";
             exit;
+        }
+
+        // Create a unique activation code to send user mail
+        $activationKey = bin2hex(openssl_random_pseudo_bytes(16));
+
+        // Insert activation key in user table
+        $sql = "INSERT INTO users (username, email, password, activation) 
+            VALUES ('$username', '$email', '$password', '$activationKey')";
+
+        // Run query
+        $result = mysqli_query($link, $sql);
+
+        if(!$result) {
+            echo "<div class='alert alert-danger'>There was error insert user in database!</div>";
+            exit;
+        }
+
+        $message = "Please click on this link to activate your account:\n\n";
+        $message .= "http://quyencao.890m.com/notesapp/activate.php?email=" . urldecode($email) . "&key=$activationKey";
+        // Send user a activate mail
+        if(mail($email, "Confirm your Registration", $message, "From: " . "quyen.cm1995@gmail.com")) {
+            echo "<div class='alert alert-success'>Thank you for registering! A confirmation email has been sent to $email. Please
+                click link to activate your account.</div>";
         }
     }
 
