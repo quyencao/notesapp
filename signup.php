@@ -2,7 +2,7 @@
     session_start();
 
     // Connect database
-    include "connection.php";
+    include("connection.php");
 
     // Check error user input
     $missing_username = "<p><strong>Please enter a username!</strong></p>";
@@ -78,7 +78,8 @@
         $email = mysqli_real_escape_string($link, $email);
         $password = mysqli_real_escape_string($link, $password);
 
-        $password = md5($password); // 32 characters
+//        $password = md5($password); // 32 characters
+        $password = hash('sha256', $password); // 64 characters
         // Check if username exist
         $sql = "SELECT * FROM users WHERE username = '$username'";
         // run query
